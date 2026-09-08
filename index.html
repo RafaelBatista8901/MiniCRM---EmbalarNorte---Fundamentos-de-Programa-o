@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mini CRM de Leads da Embalar Norte">
+  <title>Embalar Norte | Mini CRM</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="cabecalho">
+    <img src="Logotipo.png" alt="Logotipo da Embalar Norte" class="logotipo">
+    <div>
+      <p class="etiqueta">Mini CRM de Leads</p>
+      <h1>Embalar Norte, S.A.</h1>
+      <p>Registo e acompanhamento de potenciais clientes.</p>
+    </div>
+  </header>
+
+  <main class="conteudo">
+    <section class="indicadores" aria-label="Indicadores do CRM">
+      <article class="indicador"><span>Leads</span><strong id="totalLeads">0</strong></article>
+      <article class="indicador"><span>Valor potencial ativo</span><strong id="valorAtivo">0,00 €</strong></article>
+      <article class="indicador"><span>Taxa de conversão</span><strong id="taxaConversao">0%</strong></article>
+    </section>
+
+    <section class="painel">
+      <div class="titulo-seccao">
+        <div>
+          <p class="etiqueta">Registo</p>
+          <h2 id="tituloFormulario">Nova lead</h2>
+        </div>
+        <button id="cancelarEdicao" class="botao secundario escondido" type="button">Cancelar edição</button>
+      </div>
+
+      <form id="formLead">
+        <div class="grelha-formulario">
+          <label>Nome do contacto *<input id="nomeContacto" required></label>
+          <label>Nome da empresa *<input id="nomeEmpresa" required></label>
+          <label>Email *<input id="email" type="email" required></label>
+          <label>Telefone *<input id="telefone" type="tel" required></label>
+          <label>Origem da lead *
+            <select id="origem" required>
+              <option value="">Escolher...</option>
+              <option>Website</option><option>Telefone</option><option>Email</option>
+            </select>
+          </label>
+          <label>Região *
+            <select id="regiao" required>
+              <option value="">Escolher...</option>
+              <option value="Norte">Norte</option><option value="Centro">Centro</option><option value="Sul">Sul</option>
+            </select>
+          </label>
+          <label>Código postal *<input id="codigoPostal" placeholder="0000-000" required></label>
+          <label>Valor potencial (€) *<input id="valorPotencial" type="number" min="0" step="0.01" required></label>
+          <label class="campo-largo">Morada de envio *<input id="moradaEnvio" required></label>
+          <label>Estado da amostra
+            <select id="estadoAmostra"><option>Aguarda Aprovação</option><option>Aprovada</option><option>Rejeitada</option></select>
+          </label>
+          <label>Estado da proposta
+            <select id="estadoProposta"><option>Pendente</option><option>Aceite</option><option>Recusada</option></select>
+          </label>
+        </div>
+        <p id="mensagemFormulario" class="mensagem" role="alert"></p>
+        <button class="botao principal" type="submit" id="botaoGuardar">Adicionar lead</button>
+      </form>
+    </section>
+
+    <section class="painel">
+      <div class="titulo-seccao lista-cabecalho">
+        <div><p class="etiqueta">Pipeline comercial</p><h2>Leads registadas</h2></div>
+        <div class="filtros">
+          <input id="pesquisa" type="search" placeholder="Pesquisar nome ou empresa" aria-label="Pesquisar leads">
+          <select id="filtroEstado" aria-label="Filtrar por estado">
+            <option value="Todos">Todos os estados</option><option>Novo</option><option>Contactado</option><option>Proposta</option><option>Ganho</option><option>Perdido</option>
+          </select>
+        </div>
+      </div>
+      <p id="mensagemLista" class="mensagem" role="status"></p>
+      <div id="listaLeads" class="lista-leads"></div>
+    </section>
+  </main>
+  <footer>Embalar Norte, S.A. · Mini CRM de Leads</footer>
+  <script src="app.js"></script>
+</body>
+</html>

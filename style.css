@@ -1,0 +1,312 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: #172b3a;
+  background-color: #f5f7f8;
+  font-family: Arial, sans-serif;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 30px max(24px, calc((100% - 1080px) / 2));
+  color: #063b6b;
+  background-color: #8fe9ff;
+}
+
+.logotipo {
+  width: 280px;
+  height: auto;
+}
+
+.cabecalho h1 {
+  margin: 4px 0;
+  font-size: 3rem;
+  font-weight: normal;
+}
+
+.cabecalho p {
+  margin: 5px 0;
+  color: #245a70;
+}
+
+.etiqueta {
+  margin: 0;
+  color: #063b6b;
+  font-size: .75rem;
+  font-weight: bold;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.conteudo {
+  width: 94%;
+  max-width: 1080px;
+  margin: 28px auto 48px;
+}
+
+.indicadores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.indicador {
+  padding: 20px;
+  border-left: 4px solid #63c7a5;
+  background-color: white;
+  box-shadow: 0 2px 10px #18384c12;
+}
+
+.indicador span {
+  display: block;
+  color: #60717d;
+  font-size: .85rem;
+}
+
+.indicador strong {
+  display: block;
+  margin-top: 8px;
+  color: #063b6b;
+  font-size: 1.8rem;
+}
+
+.painel {
+  margin-bottom: 18px;
+  padding: 24px;
+  background-color: white;
+  box-shadow: 0 2px 10px #18384c12;
+}
+
+.titulo-seccao {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin: 4px 0 0;
+  color: #063b6b;
+  font-size: 1.7rem;
+  font-weight: normal;
+}
+
+.grelha-formulario {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: .85rem;
+  font-weight: bold;
+}
+
+.campo-largo {
+  grid-column: span 2;
+}
+
+input,
+select {
+  width: 100%;
+  min-height: 40px;
+  padding: 9px 10px;
+  border: 1px solid #d9e2e8;
+  border-radius: 3px;
+  color: #172b3a;
+  background-color: white;
+  font: inherit;
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #63c7a5;
+  border-color: #063b6b;
+}
+
+.botao {
+  min-height: 40px;
+  padding: 9px 15px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.principal {
+  margin-top: 18px;
+  color: white;
+  background-color: #063b6b;
+}
+
+.secundario {
+  border: 1px solid #d9e2e8;
+  color: #063b6b;
+  background-color: white;
+}
+
+.mensagem {
+  min-height: 20px;
+  margin: 12px 0 0;
+  color: #a52d2d;
+  font-size: .9rem;
+}
+
+.lista-cabecalho {
+  align-items: end;
+}
+
+.filtros {
+  display: flex;
+  gap: 8px;
+  width: min(520px, 100%);
+}
+
+.lista-leads {
+  display: grid;
+  gap: 12px;
+}
+
+.lead {
+  padding: 18px;
+  border: 1px solid #d9e2e8;
+  border-left: 5px solid #063b6b;
+  background-color: #fbfcfd;
+}
+
+.lead-topo,
+.lead-acoes {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 12px;
+}
+
+.lead h3 {
+  margin: 0 0 5px;
+  color: #063b6b;
+  font-size: 1.25rem;
+}
+
+.lead p {
+  margin: 5px 0;
+  font-size: .9rem;
+}
+
+.detalhes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px 18px;
+  margin: 15px 0;
+  color: #60717d;
+}
+
+.detalhes strong {
+  color: #172b3a;
+}
+
+.badge {
+  padding: 6px 9px;
+  color: #063b6b;
+  background-color: #e8f2f8;
+  font-size: .78rem;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.lead-acoes {
+  align-items: center;
+  padding-top: 12px;
+  border-top: 1px solid #d9e2e8;
+}
+
+.lead-acoes select {
+  width: auto;
+  min-width: 150px;
+}
+
+.lead-acoes .botao {
+  min-height: 34px;
+  padding: 6px 10px;
+}
+
+.eliminar {
+  border: 1px solid #e4baba;
+  color: #a52d2d;
+  background-color: white;
+}
+
+.escondido {
+  display: none;
+}
+
+.vazio {
+  padding: 30px;
+  color: #60717d;
+  text-align: center;
+}
+
+footer {
+  padding: 22px;
+  color: #000000;
+  background-color: #8fe9ff;
+  font-size: .8rem;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .cabecalho {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .logotipo {
+    width: 220px;
+  }
+
+  .cabecalho h1 {
+    font-size: 2rem;
+  }
+
+  .indicadores,
+  .grelha-formulario {
+    grid-template-columns: 1fr;
+  }
+
+  .campo-largo {
+    grid-column: auto;
+  }
+
+  .titulo-seccao,
+  .lista-cabecalho,
+  .filtros,
+  .lead-topo,
+  .lead-acoes {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .filtros {
+    width: 100%;
+  }
+
+  .detalhes {
+    grid-template-columns: 1fr;
+  }
+
+  .lead-acoes select,
+  .lead-acoes .botao {
+    width: 100%;
+  }
+}
