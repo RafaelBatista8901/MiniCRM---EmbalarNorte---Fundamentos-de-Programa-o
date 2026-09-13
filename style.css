@@ -172,16 +172,22 @@ select:focus {
   width: min(520px, 100%);
 }
 
+/* Alterações para o estilo do professor (UL) */
 .lista-leads {
   display: grid;
   gap: 12px;
+  list-style: none; /* Remove pontinhos da lista */
+  padding: 0;
+  margin: 0;
 }
 
+/* Alterações para o estilo do professor (LI) */
 .lead {
   padding: 18px;
   border: 1px solid #d9e2e8;
   border-left: 5px solid #063b6b;
   background-color: #fbfcfd;
+  border-radius: 5px;
 }
 
 .lead-topo,
