@@ -1,29 +1,54 @@
 # Mini CRM de Leads | Embalar Norte, S.A.
-
 Aplicação web para registar e acompanhar leads da Embalar Norte.
 
-## Como executar
+## Criadores
+- Pedro Ferreira
+- Rafael Batista
 
-Abrir o ficheiro index.html num navegador. Os dados ficam guardados no localStorage desse navegador.
+## Como executar
+Abrir o ficheiro `index.html` num navegador. Os dados ficam guardados no `localStorage` desse navegador.
 
 ## Funcionalidades
-
-- Registo das leads com contacto, empresa, email, telefone, origem, morada, código postal, região e valor potencial.
-- Estado da amostra e estado da proposta.
-- Atribuição automática: Norte para Pedro Ferreira; Centro para Rafael Batista, Sul para Mário Amorim.
-- Prioridade calculada pelo valor: Quente (a partir de 10 000 €), Morno (a partir de 5 000 €) ou Frio.
-- Percurso de estados: Novo → Contactado → Proposta → Ganho. De qualquer estado ativo pode passar para Perdido. Ganho e Perdido são finais.
-- Edição, eliminação, pesquisa por nome/empresa e filtro por estado.
-- Indicadores de valor potencial ativo e taxa de conversão.
+- Registo de leads com os seguintes campos: nome do contacto, nome da empresa, email, telefone, origem, região, código postal, morada de envio, estado da amostra e valor potencial.
+- Origens disponíveis: Website, Telefone e Email.
+- Regiões disponíveis: Norte, Centro e Sul.
+- Atribuição automática de comercial: Norte para Pedro Ferreira, Centro para Rafael Batista e Sul para Mário Amorim.
+- Validação dos campos obrigatórios.
+- Validação do telefone com exatamente 9 dígitos.
+- Formatação automática do código postal no formato `0000-000`.
+- Impedimento de valores potenciais negativos.
+- Estado da amostra editável de forma independente do acompanhamento.
+- Uma amostra pode estar Aprovada mesmo quando a lead fica Perdida por causa do valor ou de outra decisão comercial.
+- Uma amostra Rejeitada impede que o acompanhamento passe para Ganho.
+- Ao editar uma lead e alterar a amostra para Rejeitada, o acompanhamento passa automaticamente para Perdido.
+- Prioridade calculada automaticamente pelo valor: Quente a partir de 10 000 €, Morno a partir de 5 000 € e Frio abaixo desse valor.
+- Percurso do acompanhamento: Novo → Contactado → Proposta.
+- A partir de Proposta, é possível passar para Ganho ou Perdido.
+- Ganho e Perdido são estados finais.
+- O dropdown fica desativado quando não existem mais transições possíveis.
+- Leads em Ganho ou Perdido não podem ser editadas mas podem ser eliminadas.
+- Possibilidade de editar e eliminar leads que ainda não estejam num estado final.
+- Pesquisa de leads por nome do contacto ou nome da empresa.
+- Filtro de leads por estado do acompanhamento.
+- Indicador do número total de leads.
+- Indicador do valor potencial ativo, excluindo leads Ganho e Perdido.
+- Indicador da taxa de conversão, calculada através das leads Ganhas.
 
 ## Três cenários testados
-
 1. Criar uma lead da região Norte com valor de 12 000 €. Deve ficar atribuída ao Pedro Ferreira e a prioridade muda para quente.
 2. Tentar mudar uma lead de Novo diretamente para Ganho. A aplicação recusa a transição e mantém o estado Novo.
-3. Criar uma lead com proposta Aceite e verificar o aumento da taxa de conversão.
+3. Editar uma lead, aprovar a amostra e deixá-la em Perdido, verificando que os dois estados são independentes.
+
+## Regras de negócio
+- O Estado da amostra e o Estado do acompanhamento são campos independentes.
+- Uma amostra Rejeitada nunca permite que o acompanhamento passe para Ganho.
+- Uma lead pode ter a amostra Aprovada e ficar Perdida por causa do valor ou de outra decisão comercial.
+- Ganho representa uma lead convertida e é usada para calcular a taxa de conversão.
+- Ganho e Perdido são estados finais e impedem novas alterações à lead.
+- A região define automaticamente o comercial responsável.
 
 ## Estrutura
-
-- index.html: estrutura da página e formulário.
-- app.js: leads, regras, eventos, indicadores e persistência.
-- style.css: apresentação da aplicação.
+- `index.html`: estrutura da página, formulário, indicadores e lista.
+- `app.js`: leads, regras, validações, eventos, indicadores e persistência.
+- `style.css`: apresentação visual, cores e adaptação para ecrãs mais pequenos.
+- `Logotipo.png`: logótipo apresentado no cabeçalho da aplicação.

@@ -45,7 +45,7 @@
           <label>Nome do contacto *<input id="nomeContacto" required></label>
           <label>Nome da empresa *<input id="nomeEmpresa" required></label>
           <label>Email *<input id="email" type="email" required></label>
-          <label>Telefone *<input id="telefone" type="tel" required></label>
+          <label>Telefone *<input id="telefone" type="tel" pattern="[0-9]{9}" maxlength="9" required></label>
           <label>Origem da lead *
             <select id="origem" required>
               <option value="">Escolher...</option>
@@ -58,14 +58,15 @@
               <option value="Norte">Norte</option><option value="Centro">Centro</option><option value="Sul">Sul</option>
             </select>
           </label>
-          <label>Código postal *<input id="codigoPostal" placeholder="0000-000" required></label>
+          <label>Código postal *<input id="codigoPostal" placeholder="0000-000" maxlength="8" inputmode="numeric" required></label>
           <label>Valor potencial (€) *<input id="valorPotencial" type="number" min="0" step="0.01" required></label>
           <label class="campo-largo">Morada de envio *<input id="moradaEnvio" required></label>
           <label>Estado da amostra
-            <select id="estadoAmostra"><option>Aguarda Aprovação</option><option>Aprovada</option><option>Rejeitada</option></select>
-          </label>
-          <label>Estado da proposta
-            <select id="estadoProposta"><option>Pendente</option><option>Aceite</option><option>Recusada</option></select>
+            <select id="estadoAmostra">
+              <option>Aguarda Aprovação</option>
+              <option>Aprovada</option>
+              <option>Rejeitada</option>
+            </select>
           </label>
         </div>
         <!--Área para exibir mensagens de erro da validação do formulário -->
